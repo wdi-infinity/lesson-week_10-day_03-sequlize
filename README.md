@@ -123,7 +123,7 @@ migrations/-add-price-to-potion.js
 "use strict";
 
 module.exports = {
-  return up: (queryInterface, Sequelize) => {
+up: (queryInterface, Sequelize) => {
     /*
       Add altering commands here.
       Return a promise to correctly handle asynchronicity.
@@ -133,7 +133,7 @@ module.exports = {
     */
   },
 
-  return down: (queryInterface, Sequelize) => {
+ down: (queryInterface, Sequelize) => {
     /*
       Add reverting commands here.
       Return a promise to correctly handle asynchronicity.
