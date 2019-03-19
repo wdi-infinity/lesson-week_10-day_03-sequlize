@@ -152,12 +152,12 @@ After filling in the up and down functions, your migration file looks like this:
 ```js
 "use strict";
 module.exports = {
-  return up: function(queryInterface, Sequelize) {
-    queryInterface.addColumn("Potions", "price", Sequelize.DOUBLE);
+   up: function(queryInterface, Sequelize) {
+    return queryInterface.addColumn("Potions", "price", Sequelize.DOUBLE);
   },
 
-  return down: function(queryInterface, Sequelize) {
-    queryInterface.removeColumn("Potions", "price");
+   down: function(queryInterface, Sequelize) {
+   return queryInterface.removeColumn("Potions", "price");
   }
 };
 ```
@@ -297,7 +297,7 @@ const Order = sequelize.define("Orders", {
 });
 
 Customer.belongsToMany(models.Potion, {
-  through: orders,
+  through: Order,
   as: "groupMemberships",
   foreignKey: {
     field: "customer_id"
